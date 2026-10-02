@@ -1,0 +1,78 @@
+{
+  "manifest_version": 3,
+  "name": "LuxFlow",
+  "version": "1.0.0",
+  "description": "Управление цветовой температурой экрана для защиты зрения",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "LuxFlow",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "service-worker-loader.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "assets/overlay.ts-BZl3i7u0.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "permissions": [
+    "storage",
+    "alarms",
+    "tabs",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://ip-api.com/*",
+    "https://ipwho.is/*"
+  ],
+  "commands": {
+    "toggle-pause": {
+      "suggested_key": {
+        "default": "Alt+P"
+      },
+      "description": "Пауза / Возобновить"
+    },
+    "toggle-filter": {
+      "suggested_key": {
+        "default": "Alt+F"
+      },
+      "description": "Вкл / Выкл фильтр"
+    },
+    "toggle-extension": {
+      "suggested_key": {
+        "default": "Alt+E"
+      },
+      "description": "Вкл / Выкл расширение"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "resources": [
+        "assets/*",
+        "assets/overlay.ts-BZl3i7u0.js"
+      ],
+      "use_dynamic_url": false
+    }
+  ]
+}
