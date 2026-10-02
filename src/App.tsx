@@ -876,7 +876,7 @@ export default function App() {
 
       <div className="divider" />
 
-            {/* ============ ПОДВАЛ ============ */}
+      {/* ============ ПОДВАЛ ============ */}
       <div
         className="section"
         style={{
@@ -892,7 +892,9 @@ export default function App() {
             style={{ fontSize: '11px' }}
             onClick={(e) => {
               e.preventDefault();
-              try { chrome.tabs.create({ url: 'https://github.com/graphica-online/LuxFlow' }); } catch {}
+              try {
+                chrome.tabs.create({ url: 'https://github.com/graphica-online/LuxFlow' });
+              } catch {}
             }}
           >
             GitHub
@@ -904,7 +906,9 @@ export default function App() {
             style={{ fontSize: '11px' }}
             onClick={(e) => {
               e.preventDefault();
-              try { chrome.tabs.create({ url: 'https://github.com/graphica-online/LuxFlow#readme' }); } catch {}
+              try {
+                chrome.tabs.create({ url: 'https://github.com/graphica-online/LuxFlow#readme' });
+              } catch {}
             }}
           >
             О проекте
